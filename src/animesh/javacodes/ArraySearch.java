@@ -1,24 +1,39 @@
 package animesh.javacodes;
 
+import java.util.Scanner;
+
 public class ArraySearch {
 
-	public ArraySearch() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public static void linearSearch() {
-		int num[] = {10, -5, 34, 55, 6, 789, 666, 35};
-		int searchNum = 789;
-		for(int i = 0; i < num.length; i++) {
-			if(searchNum == num[i]) {
-				System.out.println("Number found at : " + i);
+	public static void linearSearch(Integer numArray[], Integer n, Integer searchNum) {
+		int pos = -1;
+		for(int j = 0; j < n; j++) {
+			if(searchNum == numArray[j]) {
+				pos = j;
 			}
 		}
+		if(pos == -1) {
+			System.out.println("Number not found");
+		} else {
+			System.out.println("Number found at : " + pos);
+		}
+
 	}
 	
 	public static void main(String[] args) {
 		System.out.println("Array Search Linear and Binary");
-		linearSearch();
+		Integer n;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Array Size");
+		n = sc.nextInt();
+		System.out.println("Enter Array Elements");
+		Integer num[] = new Integer[n];
+		for(int i = 0; i < n; i++) {
+			num[i] = sc.nextInt();
+		}
+		System.out.println("Enter Element to be searched");
+		int searchNum = sc.nextInt();
+		linearSearch(num, n, searchNum);
+		sc.close();
 	}
 
 }
