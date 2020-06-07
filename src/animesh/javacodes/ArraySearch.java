@@ -5,9 +5,8 @@ public class ArraySearch {
 	public ArraySearch() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public static void main(String[] args) {
-		System.out.println("Array Search Linear and Binary");
+
+	public static void linearSearch() {
 		int num[] = {10, -5, 34, 55, 6, 789, 666, 35};
 		int searchNum = 789;
 		for(int i = 0; i < num.length; i++) {
@@ -15,7 +14,11 @@ public class ArraySearch {
 				System.out.println("Number found at : " + i);
 			}
 		}
-
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Array Search Linear and Binary");
+		linearSearch();
 	}
 
 }
