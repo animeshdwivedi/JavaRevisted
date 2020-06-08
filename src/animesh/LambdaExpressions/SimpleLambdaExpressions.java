@@ -13,7 +13,7 @@ public class SimpleLambdaExpressions {
         System.out.println("Enter String to be reversed : ");
         String inputString = "";
         inputString = sc.next();
-        //Lambda Expression to reverse a string.
+        //Lambda Expression to reverse a string. 
         StringReverse reverse = (str) -> {
             String result = "";
             for(int i = str.length() - 1; i >= 0; i--) {
