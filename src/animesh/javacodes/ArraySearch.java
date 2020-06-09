@@ -1,14 +1,16 @@
 package animesh.javacodes;
 
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
-public class ArraySearch {
+class ArraySearch {
 
 
-	public static void linearSearch(Integer numArray[], Integer n, Integer searchNum) {
+	public static void linearSearch(Integer[] numArray, Integer n, Integer searchNum) {
 		int pos = -1;
 		for(int j = 0; j < n; j++) {
-			if(searchNum == numArray[j]) {
+			if(Objects.equals(searchNum, numArray[j])) {
 				pos = j;
 			}
 		}
@@ -20,12 +22,13 @@ public class ArraySearch {
 
 	}
 
-	public static void binarySearch(Integer numArray[], Integer n, Integer searchNum) {
+	public static void binarySearch(Integer[] numArray, Integer n, Integer searchNum) {
+		Arrays.sort(numArray);
 		int beg = 0;
-		int mid = (0 + n) / 2;
+		int mid = (n) / 2;
 		int end = n-1;
 		while(beg <= end) {
-			if(numArray[mid] == searchNum) {
+			if(Objects.equals(numArray[mid], searchNum)) {
 				System.out.println("Number found at : " + mid);
 				beg++;
 				end--;
@@ -45,7 +48,7 @@ public class ArraySearch {
 		System.out.println("Enter Array Size");
 		n = sc.nextInt();
 		System.out.println("Enter Array Elements");
-		Integer num[] = new Integer[n];
+		Integer[] num = new Integer[n];
 		for(int i = 0; i < n; i++) {
 			num[i] = sc.nextInt();
 		}
