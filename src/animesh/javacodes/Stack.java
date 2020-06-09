@@ -2,9 +2,9 @@ package animesh.javacodes;
 
 import java.util.Scanner;
 
-public class Stack {
+class Stack {
 
-    int stack[];
+    final int[] stack;
     int top;
 
     Stack(int size) {
@@ -36,9 +36,9 @@ public class Stack {
     }
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int size = 0;
+        int size;
         System.out.println("Stack Implementation");
         System.out.println("Enter Size of Stack : ");
         size = sc.nextInt();
